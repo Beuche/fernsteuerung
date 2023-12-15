@@ -4,18 +4,20 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (receivedNumber > 1000) {
         x = receivedNumber - 2000
     }
-    if (x >= 0) {
-        _4Digit.point(false)
-    } else {
-        _4Digit.point(true)
+    x = x / 5
+    y = y / 5
+    if (x < 0) {
+        if (y < 0) {
+            calliBot2.motor(C2Motor.links, C2Dir.vorwaerts, Math.abs(x) + y)
+            calliBot2.motor(C2Motor.rechts, C2Dir.vorwaerts, Math.abs(x))
+        } else {
+            calliBot2.motor(C2Motor.rechts, C2Dir.vorwaerts, Math.abs(x) - y)
+            calliBot2.motor(C2Motor.links, C2Dir.vorwaerts, Math.abs(x))
+        }
     }
-    _4Digit.show(Math.abs(x))
 })
 let x = 0
 let y = 0
-let _4Digit: grove.TM1637 = null
-_4Digit = grove.createDisplay(DigitalPin.C16, DigitalPin.C17)
-_4Digit.set(7)
 radio.setGroup(1)
 basic.forever(function () {
 	
