@@ -6,7 +6,8 @@
         "v1": "*",
         "Grove": "github:calliope-edu/pxt-grove#v0.2.7",
         "radio": "*",
-        "callibot": "github:mkleinsb/pxt-callibot#v2.1.1"
+        "callibot": "github:mkleinsb/pxt-callibot#v2.1.1",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.5"
     },
     "files": [
         "main.blocks",
